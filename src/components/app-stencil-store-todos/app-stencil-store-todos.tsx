@@ -1,7 +1,8 @@
 import { Component, h } from '@stencil/core';
 import { todosService } from '../../data/api/todos/todos.service';
 import { userDetailsService } from '../../data/api/users/user-details.service';
-import { $$energyLevel, $$getTodosResp, $$getUserDetailsResp } from '../../data/store/selectors/stencil-store-selectors';
+import { energyLevelStore, getTodosRespStore, getUserDetailsRespStore } from '../../data/store/selectors/stencil-store-selectors';
+// import { $$energyLevel, $$getTodosResp, $$getUserDetailsResp } from '../../data/store/selectors/stencil-store-selectors';
 import { logEnergyLevel } from '../../data/store/state/todos.slice';
 import { store } from '../../data/store/store';
 import { EnergyLevel } from '../../data/types/energy-level';
@@ -16,7 +17,7 @@ export class AppTodos {
 
   initiateRequests() {
     this.todosReqUnsub?.();
-    const req = todosService.initiateTodosRequest($$energyLevel.energyLevel);
+    const req = todosService.initiateTodosRequest(energyLevelStore.state.energyLevel);
     this.todosReqUnsub = req.unsubscribe;
 
     const userDetailsReq = userDetailsService.initiateUserDetailsRequest();
@@ -44,9 +45,9 @@ export class AppTodos {
 
   render() {
     return <article style={{ "display": "flex", "gap": "16px", "justify-content": "center", "flex-direction": "column", "align-items": "center" }}>
-      <header style={{ "font-weight": "bold" }}>{$$getUserDetailsResp.value?.data?.name}'s Stencil Store Todo List</header>
+      <header style={{ "font-weight": "bold" }}>{getUserDetailsRespStore.state.value?.data?.name}'s Stencil Store Todo List</header>
       <section>
-        {$$getTodosResp.value.data?.map(todo =>
+        {getTodosRespStore.state.value.data?.map(todo =>
           <div>{todo.description}</div>
         )}
       </section>

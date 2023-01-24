@@ -11,8 +11,7 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil-community/router": "^1.0.2",
-    "@stencil/core": "2.13.0",
+    "@stencil/core": "2.22.2",
     "@types/jest": "^27.0.3",
     "@types/node": "^18.11.18",
     "jest": "^27.4.5",

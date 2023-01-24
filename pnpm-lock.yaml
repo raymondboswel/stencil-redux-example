@@ -2,8 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@reduxjs/toolkit': ^1.9.1
-  '@stencil-community/router': ^1.0.2
-  '@stencil/core': 2.13.0
+  '@stencil/core': 2.22.2
   '@stencil/store': ^2.0.3
   '@types/jest': ^27.0.3
   '@types/node': ^18.11.18
@@ -16,14 +15,13 @@ specifiers:
 
 dependencies:
   '@reduxjs/toolkit': 1.9.1
-  '@stencil/store': 2.0.3_@stencil+core@2.13.0
+  '@stencil/store': 2.0.3_@stencil+core@2.22.2
   cors: 2.8.5
   express: 4.18.2
   rxjs: 7.8.0
 
 devDependencies:
-  '@stencil-community/router': 1.0.2
-  '@stencil/core': 2.13.0
+  '@stencil/core': 2.22.2
   '@types/jest': 27.5.2
   '@types/node': 18.11.18
   jest: 27.5.1
@@ -643,28 +641,17 @@ packages:
       '@sinonjs/commons': 1.8.6
     dev: true
 
-  /@stencil-community/router/1.0.2:
-    resolution: {integrity: sha512-GQkhcwDZdkX6k6rE/ZqrH2mbxGt9wPq0KGAdwPJOcZJbfq9cKaSMOuS7heDEBcWgXgxJS2rKqwUKyKTj41g9pA==}
-    dependencies:
-      '@stencil/state-tunnel': 1.0.1
-    dev: true
-
-  /@stencil/core/2.13.0:
-    resolution: {integrity: sha512-EEKHOHgYpg3/iFUKMXTZJjUayRul7sXDwNw0OGgkEOe4t7JWiibDkzUHuruvpbqEydX+z1+ez5K2bMMY76c2wA==}
+  /@stencil/core/2.22.2:
+    resolution: {integrity: sha512-r+vbxsGNcBaV1VDOYW25lv4QfXTlNoIb5GpUX7rZ+cr59yqYCZC5tlV+IzX6YgHKW62ulCc9M3RYtTfHtNbNNw==}
     engines: {node: '>=12.10.0', npm: '>=6.0.0'}
     hasBin: true
 
-  /@stencil/state-tunnel/1.0.1:
-    resolution: {integrity: sha512-DYG8uROgL9hkjVTCtCfRBb0d3FwpiFB0muRrNZQ2X1Qo5hxMuNNji76/ILddqeq0AfgkKCW82xrMPDpy+rNIhQ==}
-    deprecated: '@stencil/state-tunnel is no longer supported'
-    dev: true
-
-  /@stencil/store/2.0.3_@stencil+core@2.13.0:
+  /@stencil/store/2.0.3_@stencil+core@2.22.2:
     resolution: {integrity: sha512-45SkXtVXaYMo3itvfUleKjQr8BNowi6b0i1jHCx8O2UXJag5myvstjf4uIxkW6IscV92VzLrpIXUFvbJJKa7DA==}
     peerDependencies:
       '@stencil/core': '>=2.0.0'
     dependencies:
-      '@stencil/core': 2.13.0
+      '@stencil/core': 2.22.2
     dev: false
 
   /@tootallnate/once/1.1.2:

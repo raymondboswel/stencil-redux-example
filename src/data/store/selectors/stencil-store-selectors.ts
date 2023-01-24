@@ -13,11 +13,11 @@ export const selectEnergyLevel = createSelector(
   state => state.energyLevel
 );
 
-const energyLevelStore = createStore<{ energyLevel: EnergyLevel }>({ energyLevel: 'great' });
+export const energyLevelStore = createStore<{ energyLevel: EnergyLevel }>({ energyLevel: 'great' });
 export const $$energyLevel = energyLevelStore.state;
-const getTodosRespStore = createStore<{ value: GetTodosResponse }>({ value: undefined });
+export const getTodosRespStore = createStore<{ value: GetTodosResponse }>({ value: undefined });
 export const $$getTodosResp = getTodosRespStore.state;
-const getUserDetailsRespStore = createStore<{ value: GetUserDetailsResponse }>({ value: undefined });
+export const getUserDetailsRespStore = createStore<{ value: GetUserDetailsResponse }>({ value: undefined });
 export const $$getUserDetailsResp = getUserDetailsRespStore.state;
 
 
@@ -27,11 +27,14 @@ store.subscribe(() => {
   const getTodosResp = getTodosSelector()(state);
   console.log("GET TODOS RESP", getTodosResp);
 
-  $$getTodosResp.value = getTodosResp;
+  // $$getTodosResp.value = getTodosResp;
+  getTodosRespStore.state.value = getTodosResp;
 
   const getUserDetailsResp = getUserDetailsSelector()(state);
-  $$getUserDetailsResp.value = getUserDetailsResp;
+  getUserDetailsRespStore.state.value = getUserDetailsResp;
+  // $$getUserDetailsResp.value = getUserDetailsResp;
 
   const energyLevel = selectEnergyLevel(state)
-  $$energyLevel.energyLevel = energyLevel;
+  // $$energyLevel.energyLevel = energyLevel;
+  energyLevelStore.state.energyLevel = energyLevel;
 });
